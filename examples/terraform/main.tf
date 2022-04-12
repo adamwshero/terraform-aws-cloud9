@@ -9,6 +9,8 @@ module "cloud9" {
   connection_type             = "CONNECT_SSH"
   owner_arn                   = "arn:aws:sts::123456789101112:assumed-role/AWSReservedSSO_AWSAdministratorAccess_a12v456789d123546w"
   subnet_id                   = "subnet-123456789"
+  assign_static_ip            = true
+  vpc                         = true
   tags = {
     Environment        = local.env
     Owner              = "DevOps"
