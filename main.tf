@@ -16,3 +16,10 @@ data "aws_instance" "this" {
     values = [aws_cloud9_environment_ec2.this.id]
   }
 }
+
+resource "aws_eip" "this" {
+  count = var.assign_static_ip ? 1 : 0
+
+  instance = data.aws_instance.this.id
+  vpc      = var.vpc
+}

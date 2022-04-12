@@ -5,7 +5,7 @@
 <br>
 <br>
 <br>
-![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/adamwshero/terraform-aws-cloud9-environment-ec2?color=lightgreen&label=latest%20tag%3A&style=for-the-badge)
+![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/adamwshero/terraform-aws-cloud9?color=lightgreen&label=latest%20tag%3A&style=for-the-badge)
 <br>
 <br>
 # terraform-aws-cloud9-environment-ec2
