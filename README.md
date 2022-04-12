@@ -108,12 +108,12 @@ inputs = {
 | Subnet Id           | `subnet_id`                   | bool        |
 | Region              | `region`                      | string      |
 | Tags                | `tags`                        | map(string) |
-<br>
 
+<br>
 
 | Elastic IP        | Variable                      | Data Type   
 | ------------------| ------------------------------| ------------|
-| Assign Static IP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | `assign_static_ip`            | bool        |
+| Assign Static IP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | `assign_static_ip`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| bool        |
 | VPC               | `vpc`                         | bool        |
 
 ## Outputs
