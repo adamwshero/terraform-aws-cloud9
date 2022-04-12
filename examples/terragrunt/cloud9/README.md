@@ -17,7 +17,7 @@ dependency "vpc" {
 }
 
 terraform {
-  source = "git@github.com:adamwshero/terraform-aws-cloud9.git//?ref=1.0.0"
+  source = "git@github.com:adamwshero/terraform-aws-cloud9.git//?ref=1.0.4"
 
 inputs = {
   name                        = "my_cloud9"

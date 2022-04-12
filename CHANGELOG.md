@@ -1,3 +1,9 @@
+## 1.0.4 (April 12, 2022)
+
+CHORE:
+
+  * Improved documentation everywhere.
+
 ## 1.0.3 (April 11, 2022)
 
 CHORE:

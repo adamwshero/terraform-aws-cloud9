@@ -10,7 +10,7 @@
 <br>
 # terraform-aws-cloud9-environment-ec2
 
-Terraform module to create Amazon Cloud9 EC2 Development Environment.
+Terraform module to create Amazon Cloud9 EC2 Development Environment with an optional elastic IP (EIP).
 
 [AWS Cloud9](https://aws.amazon.com/cloud9/) is a cloud-based integrated development environment (IDE) that lets you write, run, and debug your code with just a browser. It includes a code editor, debugger, and terminal. Cloud9 comes prepackaged with essential tools for popular programming languages, including JavaScript, Python, PHP, and more, so you don’t need to install files or configure your development machine to start new projects. Since your Cloud9 IDE is cloud-based, you can work on your projects from your office, home, or anywhere using an internet-connected machine. Cloud9 also provides a seamless experience for developing serverless applications enabling you to easily define resources, debug, and switch between local and remote execution of serverless applications. With Cloud9, you can quickly share your development environment with your team, enabling you to pair program and track each other's inputs in real time.
 
@@ -18,6 +18,11 @@ Terraform module to create Amazon Cloud9 EC2 Development Environment.
 
 Look at our [Terraform example](latest/examples/terraform/) where you can get a better context of usage for both Terraform. The Terragrunt example can be viewed directly from GitHub.
 
+## Usage
+
+You can create a single Cloud9 environment with an optional elastic IP assigned to it that is inside our outside of your VPC.
+
+\* NOTE: Resources in this module can cost money to deploy and maintain. Size your Cloud9 instances that fit within your budget. \*
 
 ### Terraform Example
 
@@ -25,7 +30,7 @@ Look at our [Terraform example](latest/examples/terraform/) where you can get a 
 module "cloud9" {
 
   source = "adamwshero/cloud9/aws"
-  version = "~> 1.0.0"
+  version = "~> 1.0.4"
 
   name              = "test_cloud9"
   description       = "Description of my_cloud9"
@@ -60,7 +65,7 @@ dependency "vpc" {
 }
 
 terraform {
-  source = "git@github.com:adamwshero/terraform-aws-cloud9.git//?ref=1.0.0"
+  source = "git@github.com:adamwshero/terraform-aws-cloud9.git//?ref=1.0.4"
 }
 
 inputs = {
@@ -96,18 +101,18 @@ inputs = {
 
 ## Available Inputs
 
-| Cloud9              | Variable                      | Data Type   |
-| --------------------| ------------------------------| ------------|
-| Name                | `name`                        | string      |
-| Description         | `description`                 | string      |
-| Instance Type       | `instance_type`               | string      |
-| Image Id            | `image_id`                    | string      |
-| Automatic Stop Time | `automatic_stop_time_minutes` | number      |
-| Connection Type     | `connection_type`             | string      |
-| Owner Arn           | `owner_arn`                   | string      |
-| Subnet Id           | `subnet_id`                   | bool        |
-| Region              | `region`                      | string      |
-| Tags                | `tags`                        | map(string) |
+| Cloud9              | Variable                      | Data Type   | Required? |
+| --------------------| ------------------------------| ------------| ----------|
+| Name                | `name`                        | string      | Yes       |
+| Description         | `description`                 | string      | No        |
+| Instance Type       | `instance_type`               | string      | Yes       |
+| Image Id            | `image_id`                    | string      | No        |
+| Automatic Stop Time | `automatic_stop_time_minutes` | number      | No        |
+| Connection Type     | `connection_type`             | string      | No        |
+| Owner Arn           | `owner_arn`                   | string      | No        |
+| Subnet Id           | `subnet_id`                   | bool        | No        |
+| Region              | `region`                      | string      | No        |
+| Tags                | `tags`                        | map(string) | No        |
 
 <br>
 

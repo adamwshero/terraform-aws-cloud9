@@ -61,7 +61,7 @@ variable "subnet_id" {
 }
 
 variable "region" {
-  description = "AWS Region where your chosen subnet resides."
+  description = "AWS Region where your chosen subnet resides (Only used to build the cloud9_url in outputs)."
   default     = "us-east-1"
 }
 
@@ -81,7 +81,7 @@ variable "assign_static_ip" {
 }
 
 variable "vpc" {
-  description = "Determines the VPC in which to create the elastic IP for static IP allocation to Cloud9."
+  description = "(Optional) Boolean if the EIP is in a VPC or not."
   type        = bool
   default     = true
 }
