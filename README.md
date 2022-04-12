@@ -116,10 +116,10 @@ inputs = {
 
 <br>
 
-| Elastic IP        | Variable                      | Data Type   
-| ------------------| ------------------------------| ------------|
-| Assign Static IP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | `assign_static_ip`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| bool        |
-| VPC               | `vpc`                         | bool        |
+| Elastic IP        | Variable                      | Data Type   | Required? |
+| ------------------| ------------------------------| ------------| ----------|
+| Assign Static IP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | `assign_static_ip`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| bool        | No
+| VPC               | `vpc`                         | bool        | No
 
 ## Outputs
 
