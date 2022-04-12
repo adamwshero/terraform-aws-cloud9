@@ -24,17 +24,19 @@ Look at our [Terraform example](latest/examples/terraform/) where you can get a 
 ```
 module "cloud9" {
 
-    source = "adamwshero/cloud9/aws"
-    version = "~> 1.0.0"
+  source = "adamwshero/cloud9/aws"
+  version = "~> 1.0.0"
 
-  name        = "test_cloud9"
-  description = "Description of my_cloud9"
-  subnet_id   = "subnet-123456abcd789"
+  name              = "test_cloud9"
+  description       = "Description of my_cloud9"
+  subnet_id         = "subnet-123456abcd789"
+  assign_static_ip  = true
+  vpc               = true
   tags = {
-      application              = "my-service"
-      environment              = "dev"
-      last_modified_by         = "devops.hero@company.com"
-      team_name                = "devops"
+      application      = "my-service"
+      environment      = "dev"
+      last_modified_by = "devops.hero@company.com"
+      team_name        = "devops"
   }
 }
 ```
@@ -62,10 +64,12 @@ terraform {
 }
 
 inputs = {
-  name        = "my_cloud9"
-  description = "Description of my_cloud9"
-  subnet_id   = dependency.vpc.outputs.public_subnets[1]
-  tags        = local.tags
+  name             = "my_cloud9"
+  description      = "Description of my_cloud9"
+  subnet_id        = dependency.vpc.outputs.public_subnets[1]
+  assign_static_ip = true
+  vpc              = true
+  tags             = local.tags
 }
 ```
 
@@ -92,7 +96,7 @@ inputs = {
 
 ## Available Inputs
 
-| Cloud9 Property     | Variable                      | Data Type   |
+| Cloud9              | Variable                      | Data Type   |
 | --------------------| ------------------------------| ------------|
 | Name                | `name`                        | string      |
 | Description         | `description`                 | string      |
@@ -105,10 +109,18 @@ inputs = {
 | Region              | `region`                      | string      |
 | Tags                | `tags`                        | map(string) |
 
+
+| Elastic IP        | Variable                      | Data Type   
+| ------------------| ------------------------------| ------------|
+| Assign Static IP  | `assign_static_ip`            | bool        |
+| VPC               | `vpc`                         | bool        |
+
 ## Outputs
 
-| Name         | Description                      |
-|--------------|----------------------------------|
-| Cloud9 URL   | Arn of the customer managed key. |
-| CMK Id    | Id of the customer managed key.  |
-| SOPS File | Contents of the SOPS file.       |
+| Name         | Description                                             |
+|--------------|---------------------------------------------------------|
+| Cloud9 Arn             | Arn of the Cloud9 Environment.                |
+| Cloud9 Connection Type | Connection type of the Cloud9 Environment.    |
+| Cloud9 Public IP       | Static IP assigned to the Cloud9 Environment. |
+| Cloud9 URL             | URL of the Cloud9 Environment.                |
+

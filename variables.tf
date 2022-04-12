@@ -65,11 +65,14 @@ variable "region" {
   default     = "us-east-1"
 }
 
-variable "vpc" {
-  description = "Determines the VPC in which to create the elastic IP for static IP allocation to Cloud9."
-  type        = bool
-  default     = true
+variable "tags" {
+  description = "(Optional) Key-value map of resource tags. If configured with a provider default_tags configuration block present, tags with matching keys will overwrite those defined at the provider-level."
+  type        = map(string)
 }
+
+##############
+# Cloud 9 EIP
+##############
 
 variable "assign_static_ip" {
   description = "Controls whether or not an EIP is created and assigned to the Cloud9 Environment."
@@ -77,7 +80,8 @@ variable "assign_static_ip" {
   default     = false
 }
 
-variable "tags" {
-  description = "(Optional) Key-value map of resource tags. If configured with a provider default_tags configuration block present, tags with matching keys will overwrite those defined at the provider-level."
-  type        = map(string)
+variable "vpc" {
+  description = "Determines the VPC in which to create the elastic IP for static IP allocation to Cloud9."
+  type        = bool
+  default     = true
 }
