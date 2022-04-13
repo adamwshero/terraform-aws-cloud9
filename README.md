@@ -101,25 +101,20 @@ inputs = {
 
 ## Available Inputs
 
-| Cloud9              | Variable                      | Data Type   | Required? |
-| --------------------| ------------------------------| ------------| ----------|
-| Name                | `name`                        | string      | Yes       |
-| Description         | `description`                 | string      | No        |
-| Instance Type       | `instance_type`               | string      | Yes       |
-| Image Id            | `image_id`                    | string      | No        |
-| Automatic Stop Time | `automatic_stop_time_minutes` | number      | No        |
-| Connection Type     | `connection_type`             | string      | No        |
-| Owner Arn           | `owner_arn`                   | string      | No        |
-| Subnet Id           | `subnet_id`                   | bool        | No        |
-| Region              | `region`                      | string      | No        |
-| Tags                | `tags`                        | map(string) | No        |
-
-<br>
-
-| Elastic IP        | Variable                      | Data Type   | Required? |
-| ------------------| ------------------------------| ------------| ----------|
-| Assign Static IP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | `assign_static_ip`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| bool        | No
-| VPC               | `vpc`                         | bool        | No
+| Name                | Resource                   | Variable                     | Data Type     | Default                                                     |Required?|
+| --------------------| ---------------------------| -----------------------------| --------------|-------------------------------------------------------------|---------|
+| Name                | aws_cloud9_environment_ec2 | `name`                       | `string`      | `""`                                                        | Yes     |
+| Description         | aws_cloud9_environment_ec2 | `description`                | `string`      | `""`                                                        | No      |
+| Instance Type       | aws_cloud9_environment_ec2 | `instance_type`              | `string`      | `t3.micro`                                                  | Yes     |
+| Image Id            | aws_cloud9_environment_ec2 | `image_id`                   | `string`      | `resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64` | No      |
+| Automatic Stop Time | aws_cloud9_environment_ec2 | `automatic_stop_time_minutes`| `number`      | `30`                                                        | No      |
+| Connection Type     | aws_cloud9_environment_ec2 | `connection_type`            | `string`      | `CONNECT_SSH`                                               | No      |
+| Owner Arn           | aws_cloud9_environment_ec2 | `owner_arn`                  | `string`      | `""`                                                        | No      |
+| Subnet Id           | aws_cloud9_environment_ec2 | `subnet_id`                  | `string`      | `""`                                                        | No      |
+| Region              | aws_cloud9_environment_ec2 | `region`                     | `string`      | `us-east-1`                                                 | No      |
+| Tags                | aws_cloud9_environment_ec2 | `tags`                       | `map(string)` | `""`                                                        | No      |
+| Assign Static IP    | aws_eip                    | `assign_static_ip`           | `bool`        | `false`                                                     | No      |
+| vpc                 | aws_eip                    | `vpc`                        | `bool`        | `false`                                                     | No      |
 
 ## Outputs
 

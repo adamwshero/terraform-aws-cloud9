@@ -83,5 +83,5 @@ variable "assign_static_ip" {
 variable "vpc" {
   description = "(Optional) Boolean if the EIP is in a VPC or not."
   type        = bool
-  default     = true
+  default     = false
 }
