@@ -30,7 +30,7 @@ You can create a single Cloud9 environment with an optional elastic IP assigned 
 module "cloud9" {
 
   source = "adamwshero/cloud9/aws"
-  version = "~> 1.0.4"
+  version = "~> 1.0.5"
 
   name              = "test_cloud9"
   description       = "Description of my_cloud9"
@@ -65,7 +65,7 @@ dependency "vpc" {
 }
 
 terraform {
-  source = "git@github.com:adamwshero/terraform-aws-cloud9.git//?ref=1.0.4"
+  source = "git@github.com:adamwshero/terraform-aws-cloud9.git//?ref=1.0.5"
 }
 
 inputs = {

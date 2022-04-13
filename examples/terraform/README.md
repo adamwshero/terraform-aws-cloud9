@@ -3,7 +3,7 @@
 ```
 module "cloud9" {
   source                      = "adamwshero/cloud9/aws"
-  version                     = "~> 1.0.4"
+  version                     = "~> 1.0.5"
   name                        = "my_cloud9"
   description                 = "Description of my_cloud9"
   instance_type               = "t3.micro"

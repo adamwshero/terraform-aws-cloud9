@@ -1,3 +1,10 @@
+## 1.0.5 (April 13, 2022)
+
+CHORE:
+
+  * Set `vpc` variable default to `false`
+  * Improved input table for readme
+  
 ## 1.0.4 (April 12, 2022)
 
 CHORE:
