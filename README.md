@@ -97,7 +97,8 @@ inputs = {
 
 | Name | Type |
 |------|------|
-| [aws_ksm_key.rsm](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/kms_key) | resource |
+| [aws_cloud9_environment_ec2.rsm](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloud9_environment_ec2) | resource |
+| [aws_eip.rsm](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/eip) | resource |
 
 ## Available Inputs
 
